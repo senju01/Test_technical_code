@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Jusnior Programming</title>
+</head>
+    <input type="number" id="number"> 
+    <div>
+        <button type="button" id="gensegitiga" onclick="Segitiga()">Generate Segitiga</button>
+        <button type="button" id="genprima" onclick="Prima()">Generate Bilangan Prima</button>
+        <button type="button" id="genganjil" onclick="Ganjil()">Generate Bilangan Ganjil</button>
+    </div>
+    <div>
+        <p id="hasil"></p>
+    </div>
+
+    <script type="text/javascript">
+        var nilai = document.getElementById('number').value;
+
+        var hasil=document.getElementById("hasil")
+
+
+        function Ganjil()
+        {
+            let tampung_ganjil=[];
+            var nilai = document.getElementById('number').value;
+            for(let i=0; i<=nilai; i++)
+            {
+                if(i%2!=0)
+                {
+                    tampung_ganjil =[...tampung_ganjil,i];
+                }
+            }
+            hasil.innerHTML="Bilangan Ganjil : " + [tampung_ganjil+"<br>"];
+        }
+        function Prima()
+        {
+            var nilai = document.getElementById('number').value;
+            let tampung_prima=[];
+            for(let i=1; i<=nilai; i++)
+            {
+                let hasilprima=0;
+                for(let a=1; a<=i; a++)
+                {
+                    if(i%a==0)
+                    {
+                        hasilprima= hasilprima+1;
+                    }
+                }
+                if(hasilprima==2)
+                {
+                    tampung_prima = [...tampung_prima,i];
+                }
+            }
+            // document.write("bilangan prima : " + [tampung_prima+"<br>"]);
+            hasil.innerHTML="bilangan prima : " + [tampung_prima+"<br>"];
+        }
+
+        function Segitiga()
+        {
+            var nilai = document.getElementById('number').value;
+            // var split = nilai.split(nilai);
+            for(let i=0; i<nilai; i++)
+            {
+                let segi="";
+                for(let a=0; a<=i; a++)
+                {
+                    segi += i +"";
+                }
+                //Catatan : Baru bisa menampilkan pada console. belum bisa ditampilkan pada html
+                console.log(segi);
+            }
+        }
+    </script>
+    
+</body>
+</html>
